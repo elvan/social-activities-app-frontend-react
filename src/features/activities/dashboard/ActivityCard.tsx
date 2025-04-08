@@ -11,7 +11,6 @@ import {
   Typography,
 } from '@mui/material';
 import { Link } from 'react-router';
-import { Activity } from '../../../lib/types';
 import { formatDate } from '../../../lib/util/util';
 
 type Props = {
