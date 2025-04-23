@@ -1,4 +1,4 @@
-import { Add, Logout, Person } from '@mui/icons-material';
+import { Add, Logout, Password, Person } from '@mui/icons-material';
 import { Avatar, Box, Divider, ListItemIcon, ListItemText } from '@mui/material';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
@@ -49,6 +49,12 @@ export default function UserMenu() {
             <Person />
           </ListItemIcon>
           <ListItemText>My profile</ListItemText>
+        </MenuItem>
+        <MenuItem component={Link} to="/change-password" onClick={handleClose}>
+          <ListItemIcon>
+            <Password />
+          </ListItemIcon>
+          <ListItemText>Change password</ListItemText>
         </MenuItem>
         <Divider />
         <MenuItem

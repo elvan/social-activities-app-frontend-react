@@ -5,6 +5,7 @@ import {
   useQuery,
   useQueryClient,
 } from '@tanstack/react-query';
+import { FieldValues } from 'react-hook-form';
 import { useLocation } from 'react-router';
 import agent from '../api/agent';
 import { useAccount } from './useAccount';
@@ -37,7 +38,6 @@ export const useActivities = (id?: string) => {
       });
       return response.data;
     },
-    staleTime: 1000 * 60 * 5,
     placeholderData: keepPreviousData,
     initialPageParam: null,
     getNextPageParam: (lastPage) => lastPage.nextCursor,
@@ -89,7 +89,7 @@ export const useActivities = (id?: string) => {
   });
 
   const createActivity = useMutation({
-    mutationFn: async (activity: Activity) => {
+    mutationFn: async (activity: FieldValues) => {
       const response = await agent.post('/activities', activity);
       return response.data;
     },
